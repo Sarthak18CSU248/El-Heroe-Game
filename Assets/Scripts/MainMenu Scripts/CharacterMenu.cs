@@ -25,6 +25,8 @@ public class CharacterMenu : MonoBehaviour
         turn_OFF_CharFuncton();  // reset to turn off previous character
         characters[index].SetActive(true);
         characters[index].transform.position = charPosition.transform.position;
+
+        GameManager.instance.SelectCharacterIndex = index;
     }
 
 
