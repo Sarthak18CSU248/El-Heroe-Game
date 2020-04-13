@@ -101,7 +101,7 @@ MonoBehaviour:
   - 0,1
   combo_Type: 0
   move_Magnitude: 0.05
-  speed: 0.7
+  speed: 0.4
   speed_Move_WhileAttack: 0.1
   speed_Attack: 1.5
   turnSpeed: 10

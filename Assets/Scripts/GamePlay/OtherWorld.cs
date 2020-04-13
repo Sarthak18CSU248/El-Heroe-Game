@@ -6,6 +6,11 @@ public class OtherWorld : MonoBehaviour
 {
 
     public GameObject LoadButton;
+    public ParticleSystem Portal;
+    private void Awake()
+    {
+        Portal = gameObject.GetComponent<ParticleSystem>();
+    }
     private void OnTriggerEnter(Collider target)
     {
         if(target.tag=="Player")

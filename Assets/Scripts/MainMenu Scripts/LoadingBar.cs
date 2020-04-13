@@ -37,7 +37,7 @@ public class LoadingBar : MonoBehaviour
         else
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-            Loading_Img.GetComponent<Image>().sprite = null;
+            //Loading_Img.GetComponent<Image>().sprite = null;
         }
     }
     public void ChangeNumber()

@@ -10,9 +10,11 @@ public class GamePlayController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoadOtherWorld()
     {
-        
+        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        SceneLoader.instance.LoadScreen(name);
+
     }
-}
+    
+} // class
