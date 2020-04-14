@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/OrcWorld.unity
     guid: f8fbe8c1ec2af4aa5880e62a7a5633d1
   - enabled: 1
-    path: Assets/Scenes/WorlfWorld.unity
+    path: Assets/Scenes/WolfWorld.unity
     guid: 0afade8cee85e48d880277e793dac961
   m_configObjects: {}

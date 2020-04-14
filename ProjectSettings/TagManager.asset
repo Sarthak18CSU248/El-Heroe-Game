@@ -8,6 +8,12 @@ TagManager:
   - Inventory
   - Elevator
   - SpawnPosition
+  - effect
+  - loweffect
+  - WolfWorld
+  - OrcWorld
+  - SkyWorld
+  - Portal
   layers:
   - Default
   - TransparentFX

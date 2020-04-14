@@ -128,6 +128,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1177937909823116, guid: d794dd5a28264435c83036efca11aa62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177937909823116, guid: d794dd5a28264435c83036efca11aa62, type: 3}
+      propertyPath: m_TagString
+      value: OrcWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413454154620714, guid: d794dd5a28264435c83036efca11aa62, type: 3}
+      propertyPath: m_TagString
+      value: SkyWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794778386188996, guid: d794dd5a28264435c83036efca11aa62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794778386188996, guid: d794dd5a28264435c83036efca11aa62, type: 3}
+      propertyPath: m_TagString
+      value: WolfWorld
+      objectReference: {fileID: 0}
     - target: {fileID: 1996579062636282, guid: d794dd5a28264435c83036efca11aa62, type: 3}
       propertyPath: m_Name
       value: Load Levels
@@ -176,6 +196,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114156452396525126, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: Portal_Effect
+      value: 
+      objectReference: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65,
+        type: 3}
     - target: {fileID: 114357709035029894, guid: d794dd5a28264435c83036efca11aa62,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -186,6 +212,32 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadOtherWorld
       objectReference: {fileID: 0}
+    - target: {fileID: 114357709035029894, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114357709035029894, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114357709035029894, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_AnimationTriggers.m_SelectedTrigger
+      value: Pressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114496520803884132, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: LoadButton
+      value: 
+      objectReference: {fileID: 1174880074}
+    - target: {fileID: 114496520803884132, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: Portal_Effect
+      value: 
+      objectReference: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65,
+        type: 3}
     - target: {fileID: 114643363928972788, guid: d794dd5a28264435c83036efca11aa62,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -196,6 +248,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadOtherWorld
       objectReference: {fileID: 0}
+    - target: {fileID: 114696962478000888, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114696962478000888, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114696962478000888, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114875843537879570, guid: d794dd5a28264435c83036efca11aa62,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -205,6 +272,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadOtherWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 114875843537879570, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114919180643600426, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: LoadButton
+      value: 
+      objectReference: {fileID: 990288274}
+    - target: {fileID: 114919180643600426, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: Portal_Effect
+      value: 
+      objectReference: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65,
+        type: 3}
+    - target: {fileID: 224599513114397228, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224599513114397228, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224599513114397228, guid: d794dd5a28264435c83036efca11aa62,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d794dd5a28264435c83036efca11aa62, type: 3}
@@ -223,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &241248532
 Transform:
   m_ObjectHideFlags: 0
@@ -241,6 +339,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &990288274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1177937909823116, guid: d794dd5a28264435c83036efca11aa62,
+    type: 3}
+  m_PrefabInstance: {fileID: 58341600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1038875319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250,7 +354,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_Name
-      value: Teleport_11 (2)
+      value: SkyWorldportal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -296,18 +404,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.65263
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6526299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6526299
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
 --- !u!4 &1038875320 stripped
@@ -315,6 +411,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65,
     type: 3}
   m_PrefabInstance: {fileID: 1038875319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1174880074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1413454154620714, guid: d794dd5a28264435c83036efca11aa62,
+    type: 3}
+  m_PrefabInstance: {fileID: 58341600}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239130691
 GameObject:
@@ -345,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36818dddd4304942bf7f316aebd48f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
 --- !u!4 &1239130693
 Transform:
   m_ObjectHideFlags: 0
@@ -368,7 +471,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_Name
-      value: Teleport_11 (1)
+      value: OrcWorldportal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,18 +520,6 @@ PrefabInstance:
     - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.65263
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6526299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6526299
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
@@ -823,7 +918,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_Name
-      value: Teleport_11
+      value: WolfWorldportal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575673372603918, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,18 +967,6 @@ PrefabInstance:
     - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.65263
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6526299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129147305064950, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6526299
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b598b31cc431d4da1836b23dd59b65, type: 3}
@@ -967,13 +1054,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921958724}
-  m_LocalRotation: {x: 0.34678265, y: 0.18754753, z: -0.07098241, w: 0.91625834}
-  m_LocalPosition: {x: 62.23, y: 17.63, z: 114.08}
+  m_LocalRotation: {x: 0.3171543, y: 0.1583931, z: -0.053813454, w: 0.93350357}
+  m_LocalPosition: {x: 63.34, y: 20.071, z: 117.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 41.461, y: 23.136, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.53, y: 19.26, z: 0}
 --- !u!114 &1921958728
 MonoBehaviour:
   m_ObjectHideFlags: 0
