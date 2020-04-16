@@ -4,12 +4,15 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Sprites/HealthOrb.tpsheet
 - Assets/Sprites/HealthOrb1.tpsheet
+- Assets/Sprites/SliderHandle.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Sprites/HealthOrb.png
 - Assets/Sprites/HealthOrb1.png
+- Assets/Sprites/SliderHandle.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 enableDebugOutput: 0
