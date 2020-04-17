@@ -27,7 +27,8 @@ public class CharacterMovement : MonoBehaviour
 
     private bool isAttacking;
 
-    private GameObject atkPoint; 
+    private GameObject atkPoint;
+    public GameObject fireTornado;
 
     public float move_Magnitude = 0.05f;
     public float speed = 0.7f;
@@ -64,6 +65,7 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetButtonDown("Fire2"))
             {
                 Attack();
+                StartCoroutine(SpecialAttack());
             }
         }
 
@@ -225,6 +227,11 @@ public class CharacterMovement : MonoBehaviour
     void Attack_End()
     {
         atkPoint.SetActive(false);
+    }
+    IEnumerator SpecialAttack()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(fireTornado, transform.position + transform.forward * 2.5f, Quaternion.identity);
     }
 
 } // class

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] characters;
     [HideInInspector]
     public int SelectCharacterIndex;
+    public GameObject Inventory;
     void Awake()
     {
         MakeSingleton();
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name != "MainMenu") // spawn player
         {
+            Instantiate(Inventory, Vector3.zero,Quaternion.identity);
             Vector3 pos = GameObject.FindGameObjectWithTag("SpawnPosition").transform.position;
             Instantiate(characters[SelectCharacterIndex],pos,Quaternion.identity);
         }

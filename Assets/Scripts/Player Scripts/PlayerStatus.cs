@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class PlayerStatus : MonoBehaviour
 {
     public GameObject[] PlayerSwords;
-
-    private GameObject SwordPanel;
+    public GameObject SwordPanel,SwordScroller,SwordButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,28 +16,18 @@ public class PlayerStatus : MonoBehaviour
         {
             btn.GetComponent<Button>().onClick.AddListener(ChangeSword);
         }
-        SwordPanel = GameObject.Find("Sword Panel");
-        //SwordPanel.SetActive(false);
-        //GameObject.Find("Sword Scroller").SetActive(false);
-        GameObject.Find("Sword Button").GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
+        SwordPanel.SetActive(false);
+        SwordScroller.SetActive(false);
+        SwordButton.GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
     }
-
     public void ActivateSwordPanel()
-    {
-        if(SwordPanel.activeInHierarchy)
-        {
-            SwordPanel.SetActive(false);
-            GameObject.Find("Sword Scroller").SetActive(false);
-        }
-        else
-        {
-            SwordPanel.SetActive(true);
-            //GameObject.Find("Sword Scroller").SetActive(true);
-        }
+    { 
+            SwordPanel.SetActive(true);  
     }
     public void ChangeSword()
     {
         int swordIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+   
         for (int i=0;i<PlayerSwords.Length;i++)
         {
             PlayerSwords[i].SetActive(false);

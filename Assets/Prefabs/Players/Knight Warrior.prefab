@@ -166,6 +166,12 @@ MonoBehaviour:
   - {fileID: 1483245197044288}
   - {fileID: 1817995256331280}
   - {fileID: 1160830797122106}
+  SwordPanel: {fileID: 8688852862379287804, guid: 423b2e62daa144f959d0a9cdbf3bf59f,
+    type: 3}
+  SwordScroller: {fileID: 5928360729676321035, guid: 6584f82d09ad141d896044ad1df6bd68,
+    type: 3}
+  SwordButton: {fileID: 7990079923432965768, guid: 222b6966eaf9547c28d4f3e9e3057b38,
+    type: 3}
 --- !u!1 &123292
 GameObject:
   m_ObjectHideFlags: 0
