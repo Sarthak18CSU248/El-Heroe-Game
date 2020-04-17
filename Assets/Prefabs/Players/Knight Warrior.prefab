@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1921099729}
   - component: {fileID: 4614349263681560709}
   - component: {fileID: 187017038}
+  - component: {fileID: 1399527373}
   m_Layer: 9
   m_Name: Knight Warrior
   m_TagString: Player
@@ -149,6 +150,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.68, z: 0}
+--- !u!114 &1399527373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba21ded7c8d9b42f0941f91c7131cb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerSwords:
+  - {fileID: 1483245197044288}
+  - {fileID: 1817995256331280}
+  - {fileID: 1160830797122106}
 --- !u!1 &123292
 GameObject:
   m_ObjectHideFlags: 0

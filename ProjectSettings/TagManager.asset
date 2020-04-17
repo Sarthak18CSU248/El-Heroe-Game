@@ -14,6 +14,7 @@ TagManager:
   - OrcWorld
   - SkyWorld
   - Portal
+  - SwordBtn
   layers:
   - Default
   - TransparentFX
