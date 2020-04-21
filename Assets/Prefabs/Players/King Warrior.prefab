@@ -2580,6 +2580,7 @@ MonoBehaviour:
   combo_AttackList:
   - 0,1
   combo_Type: 0
+  fireTornado: {fileID: 175744, guid: e5bc8bb50018c46cd9669532417609a0, type: 3}
   move_Magnitude: 0.05
   speed: 0.7
   speed_Move_WhileAttack: 0.1
@@ -2616,6 +2617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deadFX: {fileID: 186856, guid: e0fdab13dc4124682b7dbaaf7d287db9, type: 3}
 --- !u!114 &1203510046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2632,12 +2634,6 @@ MonoBehaviour:
   - {fileID: 6724304557637861013}
   - {fileID: 3398685192843750333}
   - {fileID: 8162482524719236243}
-  SwordPanel: {fileID: 8688852862379287804, guid: 423b2e62daa144f959d0a9cdbf3bf59f,
-    type: 3}
-  SwordScroller: {fileID: 5928360729676321035, guid: 6584f82d09ad141d896044ad1df6bd68,
-    type: 3}
-  SwordButton: {fileID: 7990079923432965768, guid: 222b6966eaf9547c28d4f3e9e3057b38,
-    type: 3}
 --- !u!1 &1455062123693394
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,6 +5442,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8345511527469702994, guid: 9ccfcdbb103584cc4a59c2e970b6d275,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ccfcdbb103584cc4a59c2e970b6d275, type: 3}
 --- !u!4 &6721009971198870101 stripped
@@ -5532,6 +5533,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5429453024387452893, guid: e6a6f2d21edb74fbc9a015377966ab0e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a6f2d21edb74fbc9a015377966ab0e, type: 3}
 --- !u!4 &8165828161958734207 stripped
@@ -5617,6 +5623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427134388038921287, guid: 3e1fe1c321ca143fbb4eb43f8d714281,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1fe1c321ca143fbb4eb43f8d714281, type: 3}

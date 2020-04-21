@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public float health = 100f;
+    public GameObject deadFX;
 
     public void TakeDamage(float damageAmount)
     {
@@ -12,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
         print("Damage");
         if(health <=0)
         {
-            //Destroy Enemy
+            Instantiate(deadFX, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

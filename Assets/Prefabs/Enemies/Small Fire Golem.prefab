@@ -2038,7 +2038,8 @@ GameObject:
   - component: {fileID: 14312890}
   - component: {fileID: -6965604588907935703}
   - component: {fileID: 8487456450691107187}
-  m_Layer: 9
+  - component: {fileID: 7245643343921659792}
+  m_Layer: 8
   m_Name: Small Fire Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2130,12 +2131,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e012863fac9d447088a0d8b6540ead2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_Magnitude: 0.05
-  movement_Speed: 2
+  moveMagnitude: 0.05
+  movement_Speed: 0.5
   distance_Attack: 4.5
-  distance_Moveto: 13
+  distance_MoveTo: 13
   turnSpeed: 10
   patrolRange: 10
+  rightAttackPoint: {fileID: 1263033392712858}
+  leftAttackPoint: {fileID: 1567938402183990}
+--- !u!114 &7245643343921659792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3233fc420bb4693bdf306e815c5ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deadFX: {fileID: 186856, guid: e0fdab13dc4124682b7dbaaf7d287db9, type: 3}
 --- !u!1 &112886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,13 +2357,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507691845146468}
+  - component: {fileID: 4459950207517492851}
   m_Layer: 0
   m_Name: Right Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4507691845146468
 Transform:
   m_ObjectHideFlags: 0
@@ -2361,6 +2379,23 @@ Transform:
   m_Father: {fileID: 412814}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4459950207517492851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263033392712858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea0ff1fd5b874dbd8d4be9309228b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  damge: 1
+  radius: 0.3
 --- !u!1 &1567938402183990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,13 +2405,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4202513030211686}
+  - component: {fileID: 4103903509318199230}
   m_Layer: 0
   m_Name: Left Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4202513030211686
 Transform:
   m_ObjectHideFlags: 0
@@ -2391,3 +2427,20 @@ Transform:
   m_Father: {fileID: 412822}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4103903509318199230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567938402183990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea0ff1fd5b874dbd8d4be9309228b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  damge: 1
+  radius: 0.3

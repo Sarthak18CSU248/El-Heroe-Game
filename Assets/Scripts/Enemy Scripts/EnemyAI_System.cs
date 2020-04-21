@@ -38,6 +38,7 @@ public class EnemyAI_System : MonoBehaviour
 
 	void Update()
 	{
+        
 		EnemyAI();
 	}
 
@@ -102,34 +103,37 @@ public class EnemyAI_System : MonoBehaviour
 		else
 		{
 			GameObject target = GameObject.FindGameObjectWithTag("Player");
-
-			float targetDistance = Vector3.Distance(target.transform.position, transform.position);
-
-			if (targetDistance <= distance_MoveTo ||
-			   targetDistance <= distance_Attack)
+			if (target)
 			{
 
-				player_Target = target.transform;
-			}
+				float targetDistance = Vector3.Distance(target.transform.position, transform.position);
 
-			if (ai_State == 0)
-			{
-				ai_State = 1;
-				ai_Time = Random.Range(10, 200);
+				if (targetDistance <= distance_MoveTo ||
+				   targetDistance <= distance_Attack)
+				{
 
-				movement_Position = transform.position +
-					new Vector3(Random.Range(-patrolRange, patrolRange), 0f,
-						Random.Range(-patrolRange, patrolRange));
-			}
+					player_Target = target.transform;
+				}
 
-			if (ai_Time <= 0)
-			{
-				ai_State = Random.Range(0, 3);
-				ai_Time = Random.Range(10, 200);
-			}
-			else
-			{
-				ai_Time--;
+				if (ai_State == 0)
+				{
+					ai_State = 1;
+					ai_Time = Random.Range(10, 200);
+
+					movement_Position = transform.position +
+						new Vector3(Random.Range(-patrolRange, patrolRange), 0f,
+							Random.Range(-patrolRange, patrolRange));
+				}
+
+				if (ai_Time <= 0)
+				{
+					ai_State = Random.Range(0, 3);
+					ai_Time = Random.Range(10, 200);
+				}
+				else
+				{
+					ai_Time--;
+				}
 			}
 		}
 

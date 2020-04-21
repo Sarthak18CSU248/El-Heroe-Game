@@ -101,6 +101,7 @@ MonoBehaviour:
   combo_AttackList:
   - 0,1
   combo_Type: 0
+  fireTornado: {fileID: 175744, guid: e5bc8bb50018c46cd9669532417609a0, type: 3}
   move_Magnitude: 0.05
   speed: 0.4
   speed_Move_WhileAttack: 0.1
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deadFX: {fileID: 186856, guid: e0fdab13dc4124682b7dbaaf7d287db9, type: 3}
 --- !u!65 &187017038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -166,12 +168,6 @@ MonoBehaviour:
   - {fileID: 1483245197044288}
   - {fileID: 1817995256331280}
   - {fileID: 1160830797122106}
-  SwordPanel: {fileID: 8688852862379287804, guid: 423b2e62daa144f959d0a9cdbf3bf59f,
-    type: 3}
-  SwordScroller: {fileID: 5928360729676321035, guid: 6584f82d09ad141d896044ad1df6bd68,
-    type: 3}
-  SwordButton: {fileID: 7990079923432965768, guid: 222b6966eaf9547c28d4f3e9e3057b38,
-    type: 3}
 --- !u!1 &123292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5647,7 +5643,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -2.1005676e+32, z: 4.5762e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

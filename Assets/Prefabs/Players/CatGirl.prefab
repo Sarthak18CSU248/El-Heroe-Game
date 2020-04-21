@@ -4806,7 +4806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &481932
 Transform:
   m_ObjectHideFlags: 0
@@ -4879,6 +4879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deadFX: {fileID: 186856, guid: e0fdab13dc4124682b7dbaaf7d287db9, type: 3}
 --- !u!114 &114873092701455744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4916,6 +4917,7 @@ MonoBehaviour:
   combo_AttackList:
   - 0,1
   combo_Type: 0
+  fireTornado: {fileID: 175744, guid: e5bc8bb50018c46cd9669532417609a0, type: 3}
   move_Magnitude: 0.05
   speed: 0.7
   speed_Move_WhileAttack: 0.1
@@ -4938,12 +4940,6 @@ MonoBehaviour:
   - {fileID: 1486117019875860}
   - {fileID: 1300567709351840}
   - {fileID: 1847523023564686}
-  SwordPanel: {fileID: 8688852862379287804, guid: 423b2e62daa144f959d0a9cdbf3bf59f,
-    type: 3}
-  SwordScroller: {fileID: 5928360729676321035, guid: 6584f82d09ad141d896044ad1df6bd68,
-    type: 3}
-  SwordButton: {fileID: 7990079923432965768, guid: 222b6966eaf9547c28d4f3e9e3057b38,
-    type: 3}
 --- !u!1 &181934
 GameObject:
   m_ObjectHideFlags: 0
