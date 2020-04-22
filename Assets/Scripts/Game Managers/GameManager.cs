@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int SelectCharacterIndex;
     public GameObject Inventory;
+    public static bool Player_Instantiate=false;
     void Awake()
     {
         MakeSingleton();
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
             Instantiate(Inventory, Vector3.zero,Quaternion.identity);
             Vector3 pos = GameObject.FindGameObjectWithTag("SpawnPosition").transform.position;
             Instantiate(characters[SelectCharacterIndex],pos,Quaternion.identity);
+            Player_Instantiate = true;
         }
     }
 

@@ -10,9 +10,15 @@ public class OtherWorld : MonoBehaviour
     public GameObject Portal_Effect;
     private GameObject portal;
     public bool portalIsActive=false;
+    private GameObject VillagePortal, BridgePortal;
     private void Start()
     {
         instance = this;
+        VillagePortal = GameObject.Find("BridgePortal");
+        
+    }
+    private void Update()
+    {
         
     }
     public void Portal(string name)
