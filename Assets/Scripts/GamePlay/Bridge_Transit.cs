@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bridge_Transit : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
