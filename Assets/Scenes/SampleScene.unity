@@ -1604,6 +1604,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3051762161442799303, guid: 1a282876d55024c309ec387bad44fbdb,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 3051762161479640400, guid: 1a282876d55024c309ec387bad44fbdb,
         type: 3}
       propertyPath: m_AnchorMin.y
