@@ -27,6 +27,8 @@ public class EnemyAI_System : MonoBehaviour
 	private string PARAMETER_ATTACK_ONE = "Attack1";
 	private string PARAMETER_ATTACK_TWO = "Attack2";
 
+	public GameObject target;
+
 	[SerializeField]
 	private GameObject rightAttackPoint, leftAttackPoint;
 
@@ -50,8 +52,7 @@ public class EnemyAI_System : MonoBehaviour
 		target_Rotation.x = 0f;
 		target_Rotation.z = 0f;
 
-		transform.rotation = Quaternion.Lerp(transform.rotation, target_Rotation,
-			turnSpeed * Time.deltaTime);
+		transform.rotation = Quaternion.Lerp(transform.rotation, target_Rotation,turnSpeed * Time.deltaTime);
 
 		if (player_Target != null)
 		{
@@ -78,8 +79,7 @@ public class EnemyAI_System : MonoBehaviour
 			{
 				if (distance <= distance_MoveTo)
 				{
-					transform.rotation = Quaternion.Lerp(transform.rotation, target_Rotation,
-						turnSpeed * Time.deltaTime);
+					transform.rotation = Quaternion.Lerp(transform.rotation, target_Rotation,turnSpeed * Time.deltaTime);
 
 				}
 				else
@@ -102,9 +102,9 @@ public class EnemyAI_System : MonoBehaviour
 		}
 		else
 		{
-			GameObject target = GameObject.FindGameObjectWithTag("Player");
-			if (target)
-			{
+		       target = GameObject.FindGameObjectWithTag("Player");
+			
+			
 
 				float targetDistance = Vector3.Distance(target.transform.position, transform.position);
 
@@ -134,7 +134,7 @@ public class EnemyAI_System : MonoBehaviour
 				{
 					ai_Time--;
 				}
-			}
+			
 		}
 
 		MoveToPosition(movement_Position, 1f, motor.charController.velocity.magnitude);
