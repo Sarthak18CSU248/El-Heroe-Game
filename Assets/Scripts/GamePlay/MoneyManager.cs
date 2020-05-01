@@ -8,12 +8,13 @@ public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager instance;
     [HideInInspector]public Text money;
-    private int currentCoins = 20000;
+    private int currentCoins = 0;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         money = gameObject.GetComponent<Text>();
+        money.text = "$" + Convert.ToString(currentCoins);
         StartCoroutine(BonusCoin());
     }
     public int getCoins()
@@ -29,15 +30,22 @@ public class MoneyManager : MonoBehaviour
         else
             return false;
     }
+    public void BonusCoinsUpdate()
+    {
+        StartCoroutine(BonusCoin());
+    }
 
     IEnumerator BonusCoin()
     {
         int coins = 0;
         while (coins != 20000)
         {
-            coins+=25;
+            coins+=100;
             yield return new WaitForSeconds(0.0001f);
             money.text = "$" + Convert.ToString(coins);
+            currentCoins = coins;
         }
+
+        Debug.Log(currentCoins);
     }
 }
