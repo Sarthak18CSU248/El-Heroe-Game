@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerStatus : MonoBehaviour
 {
     public GameObject[] PlayerSwords;
     private GameObject Shop,ShopLogo,swordPanel,swordButton,scroller,buy_Crystal,done_crystal, done_flarecore;
     public static int Sword_Choice;
-    //public GameObject SwordP, SwordScroller;
-        //SwordButton;
-    // Start is called before the first frame update
+    
     void Start()
     {
         Shop = GameObject.Find("ShopPanel");
@@ -28,19 +27,6 @@ public class PlayerStatus : MonoBehaviour
         done_flarecore.SetActive(false);
         ShopLogo.SetActive(false);
 
-        //GameObject.Find("ShopPanel").SetActive(false);
-        /*if ()
-        {
-            GameObject[] SwordChangeButton = GameObject.FindGameObjectsWithTag("SwordBtn");
-            foreach (GameObject btn in SwordChangeButton)
-            {
-                btn.GetComponent<Button>().onClick.AddListener(ChangeSword);
-            }
-            GameObject.Find("SwordPanel").SetActive(false);
-            GameObject.Find("SwordScroller").SetActive(false);
-            GameObject.Find("SwordButton").GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
-            //GameObject.Find(SwordButton).GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
-        }*/
     }
     private void Update()
     {
@@ -91,13 +77,21 @@ public class PlayerStatus : MonoBehaviour
         int swordIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
         if(swordIndex==1)
         {
-            Destroy(GameObject.Find("BuyCrystal"));
-            done_crystal.SetActive(true);
+            if (MoneyManager.instance.canShop(6700))
+            {
+                Destroy(GameObject.Find("BuyCrystal"));
+                done_crystal.SetActive(true);
+                StartCoroutine(CoinDecrease(6700));
+            }
         }
         else if(swordIndex==2)
         {
-            Destroy(GameObject.Find("BuyFlarecore"));
-            done_flarecore.SetActive(true);
+            if (MoneyManager.instance.canShop(15000))
+            {
+                Destroy(GameObject.Find("BuyFlarecore"));
+                done_flarecore.SetActive(true);
+                StartCoroutine(CoinDecrease(15000));
+            }
         }
         for (int i=0;i<PlayerSwords.Length;i++)
         {
@@ -107,6 +101,23 @@ public class PlayerStatus : MonoBehaviour
         Sword_Choice = swordIndex;
         Debug.Log(Sword_Choice);
     }
-    
+    IEnumerator CoinDecrease(int coins_target)
+    {
+        int currBalance = MoneyManager.instance.getCoins();
+        int balance = currBalance - coins_target;
+        while (currBalance != balance)
+        {
+            if (currBalance == balance)
+                break;
+            else
+            {
+                currBalance -= 100;
+                yield return new WaitForSeconds(0.001f);
+                MoneyManager.instance.money.text = "$" + Convert.ToString(currBalance);
+
+            }
+        }
+    }
+
 
 }//class
