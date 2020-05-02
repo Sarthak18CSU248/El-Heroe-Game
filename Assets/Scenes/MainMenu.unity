@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: c5ffdbb973a2849e5a2886b8cbe01022
+  m_OcclusionCullingData: {fileID: 36300000, guid: 1b0afa66ae35c47e395741cb9cd56d54,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -7734,7 +7735,7 @@ MonoBehaviour:
   - {fileID: 1452412853929228, guid: 9965fb5ba65344f248273b59b5b859aa, type: 3}
   - {fileID: 181932, guid: ee17bc45ef026b74687ef3ee1557baf1, type: 3}
   SelectCharacterIndex: 0
-  Inventory: {fileID: 3051762160428949909, guid: 1a282876d55024c309ec387bad44fbdb,
+  HealthOrb: {fileID: 5574305009122509976, guid: 7c8832337617c4cd986fa475100c6461,
     type: 3}
 --- !u!4 &1622298094
 Transform:
