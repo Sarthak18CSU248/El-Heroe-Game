@@ -8,8 +8,9 @@ public class ShopSystem : MonoBehaviour
 {
     public static ShopSystem instance;
     private bool enterShop;
-    private GameObject Shop,ShopLogo, swordPanel,swordButton,scroller,done_crystal, done_flarecore,coinManager;
+    private GameObject swordPanel,swordButton,scroller,done_crystal, done_flarecore,coinManager;
     private bool acceptBonus;
+    [HideInInspector]public GameObject Shop;
     void Start()
     {
         instance = this;
@@ -19,7 +20,6 @@ public class ShopSystem : MonoBehaviour
         scroller = GameObject.Find("SwordScroller");
         done_crystal = GameObject.Find("DoneCrystal");
         done_flarecore = GameObject.Find("DoneFlarecore");
-        ShopLogo = GameObject.Find("ShopLogo");
         coinManager = GameObject.Find("Coin System");
         Shop.SetActive(false);
         swordPanel.SetActive(false);
@@ -27,47 +27,47 @@ public class ShopSystem : MonoBehaviour
         scroller.SetActive(false);
         done_crystal.SetActive(false);
         done_flarecore.SetActive(false);
-        ShopLogo.SetActive(false);
 
     }
-    public void Update()
+    void Update()
+    {
+        ActivateShop();   
+    }
+    public void ActivateShop()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-                if (canShop())
-                {
-                    if (Shop.activeInHierarchy)
-                    {
-                        Shop.SetActive(false);
-                        ShopLogo.SetActive(false);
-                        MouseLock.MouseLocked = true;
-                    }
-                    else
-                    {
-                        Shop.SetActive(true);
-                        MouseLock.MouseLocked = false;
-                        swordPanel.SetActive(false);
-                        swordButton.SetActive(true);
-                        scroller.SetActive(false);
-                        ShopLogo.SetActive(true);
-                    }
-                }
-        }
-            if (Shop.activeInHierarchy)
+            if (canShop())
             {
-                swordButton.GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
-                if (swordPanel.activeInHierarchy)
+                if (Shop.activeInHierarchy)
                 {
-                    GameObject[] SwordChangeButton = GameObject.FindGameObjectsWithTag("SwordBtn");
-                    foreach (GameObject btn in SwordChangeButton)
-                    {
-                        btn.GetComponent<Button>().onClick.AddListener(BuySword);
-                    }
-
+                    Shop.SetActive(false);
+                    MouseLock.MouseLocked = true;
+                }
+                else
+                {
+                    Shop.SetActive(true);
+                    MouseLock.MouseLocked = false;
+                    swordPanel.SetActive(false);
+                    swordButton.SetActive(true);
+                    scroller.SetActive(false);
+                }
+            }
+        }
+        if (Shop.activeInHierarchy)
+        {
+            swordButton.GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
+            if (swordPanel.activeInHierarchy)
+            {
+                GameObject[] SwordChangeButton = GameObject.FindGameObjectsWithTag("SwordBtn");
+                foreach (GameObject btn in SwordChangeButton)
+                {
+                    btn.GetComponent<Button>().onClick.AddListener(BuySword);
                 }
 
             }
-        
+
+        }
     }
     public void ActivateSwordPanel()
     {
@@ -108,6 +108,7 @@ public class ShopSystem : MonoBehaviour
     private void BuySword()
     {
         int swordIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        Debug.Log(swordIndex);
         if (swordIndex == 1)
         {
             if (MoneyManager.instance.canShop(6700))
@@ -131,7 +132,7 @@ public class ShopSystem : MonoBehaviour
     }
     IEnumerator CoinDecrease(int coins_target)
     {
-        int currBalance = MoneyManager.instance.getCoins();
+        int currBalance = MoneyManager.instance.getCoins;
         int balance = currBalance - coins_target;
         while (currBalance != balance)
         {
@@ -145,5 +146,7 @@ public class ShopSystem : MonoBehaviour
 
             }
         }
+
+        MoneyManager.instance.getCoins = balance;
     }
 }

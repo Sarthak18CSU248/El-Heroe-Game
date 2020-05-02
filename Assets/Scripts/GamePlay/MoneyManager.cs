@@ -17,9 +17,17 @@ public class MoneyManager : MonoBehaviour
         money = gameObject.GetComponent<Text>();
         money.text = "$" + Convert.ToString(currentCoins);
     }
-    public int getCoins()
+    public int getCoins
     {
-        return currentCoins;
+        get
+        {
+            return currentCoins;
+        }
+        set
+        {
+            currentCoins = value;
+        }
+        
     }
     public bool canShop(int expense)
     {

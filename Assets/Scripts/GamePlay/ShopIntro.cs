@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopIntro : MonoBehaviour
 {
@@ -12,20 +13,34 @@ public class ShopIntro : MonoBehaviour
         introImg.SetActive(false);
         nextBttn.SetActive(false);
     }
+    private void Update()
+    {
+        nextBttn.GetComponent<Button>().onClick.AddListener(activateShop);
+    }
     private void activateIntroPanel()
+    {
+        introImg.SetActive(true);
+        nextBttn.SetActive(true);
+    }
+    public void activateShop()
     {
         introImg.SetActive(false);
         nextBttn.SetActive(false);
+        ShopSystem.instance.Shop.SetActive(true);
+        ShopSystem.instance.ActivateShop();
+        MoneyManager.instance.BonusCoinsUpdate();
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         if (other.tag == "Player")
         {
-            if (ShopSystem.instance.setBonusStatus == false)
+            ShopSystem.instance.setShopStatus = true;
+            if (!ShopSystem.instance.setBonusStatus)
+            { 
                 activateIntroPanel();
+            }
             else
-                ShopSystem.instance.Update();
+                ShopSystem.instance.ActivateShop();
         }
     }
 }
