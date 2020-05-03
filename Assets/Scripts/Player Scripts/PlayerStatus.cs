@@ -8,9 +8,11 @@ public class PlayerStatus : MonoBehaviour
 {
     public GameObject[] PlayerSwords;
     public static PlayerStatus instance;
+    private int choice=0;
     private void Awake()
     {
         instance = this;
+        ChangeSword(choice);
     }
     public void ChangeSword(int choice)
     {
@@ -18,7 +20,6 @@ public class PlayerStatus : MonoBehaviour
         {
             PlayerSwords[i].SetActive(false);
         }
-
         PlayerSwords[choice].SetActive(true);
     }
 
