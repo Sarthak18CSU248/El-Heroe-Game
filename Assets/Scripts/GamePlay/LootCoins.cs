@@ -5,12 +5,27 @@ using UnityEngine;
 public class LootCoins : MonoBehaviour
 {
     [SerializeField] private Mesh chest_open;
-
-    private void OnCollisionEnter(Collision collision)
+    private GameObject treasureOpen;
+    private bool opened;
+    private void Awake()
     {
-        if(collision.gameObject.tag=="Player")
+        treasureOpen = GameObject.Find("Treasure Open");
+        treasureOpen.SetActive(false);
+    }
+    private void Update()
+    {
+        if(opened && Input.GetKeyDown(KeyCode.O))
+             gameObject.GetComponent<MeshFilter>().mesh = chest_open;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Player")
         {
-            gameObject.GetComponent<MeshFilter>().mesh = chest_open;
+            treasureOpen.SetActive(true);
+            opened = true;
+            
         }
     }
 }
