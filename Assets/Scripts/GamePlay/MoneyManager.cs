@@ -13,6 +13,15 @@ public class MoneyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (ES3.KeyExists("AccountBalance","Saved Files/GameData.es3"))
+        {
+            currentCoins = ES3.Load<int>("AccountBalance", "Saved Files/GameData.es3");
+        }
+        else
+        {
+            ES3.Save<int>("AccountBalance", 0);
+        }
+        Debug.Log(currentCoins);
         instance = this;
         money = gameObject.GetComponent<Text>();
         money.text = "$" + Convert.ToString(currentCoins);
@@ -53,6 +62,7 @@ public class MoneyManager : MonoBehaviour
             money.text = "$" + Convert.ToString(coins);
             currentCoins = coins;
         }
-        ShopSystem.instance.setBonusStatus=true;
+        ES3.Save<int>("AccountBalance", currentCoins,"Saved Files/GameData.es3");
+        ShopSystem.instance.setBonusStatus = true;
     }
 }

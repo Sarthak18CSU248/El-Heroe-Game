@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
+            ES3.Save<int>("default", 0, "Saved Files/GameData.es3");
             DontDestroyOnLoad(gameObject);
         }
     }

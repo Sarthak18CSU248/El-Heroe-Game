@@ -35,12 +35,18 @@ public class ShopIntro : MonoBehaviour
         if (other.tag == "Player")
         {
             ShopSystem.instance.setShopStatus = true;
-            if (!ShopSystem.instance.setBonusStatus)
-            { 
+            bool bonusRecieved = ES3.Load<bool>("BonusStatus","Saved Files/GameData.es3");
+            //Debug.Log(bonusRecieved);
+            if (!bonusRecieved)
+            {
                 activateIntroPanel();
             }
             else
+            {
                 ShopSystem.instance.ActivateShop();
+                GameObject Button = ShopSystem.instance.swordBtn;
+                Button.SetActive(true);
+            }
         }
     }
 }

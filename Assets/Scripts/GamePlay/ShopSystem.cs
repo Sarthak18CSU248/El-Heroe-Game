@@ -13,6 +13,11 @@ public class ShopSystem : MonoBehaviour
     [HideInInspector]public GameObject Shop;
     void Start()
     {
+        if (ES3.KeyExists("BonusStatus", "Saved Files/GameData.es3"))
+            acceptBonus = ES3.Load<Boolean>("BonusStatus", "Saved Files/GameData.es3");
+        else
+            ES3.Save<bool>("BonusStatus", false, "Saved Files/GameData.es3");
+
         instance = this;
         Shop = GameObject.Find("ShopPanel");
         swordPanel = GameObject.Find("SwordPanel");
@@ -32,6 +37,13 @@ public class ShopSystem : MonoBehaviour
     void Update()
     {
         ActivateShop();   
+    }
+    public GameObject swordBtn
+    {
+        get
+        {
+            return swordButton;
+        }
     }
     public void ActivateShop()
     {
@@ -92,6 +104,9 @@ public class ShopSystem : MonoBehaviour
         set
         {
             acceptBonus = value;
+            ES3.Save<bool>("BonusStatus", value, "Saved Files/GameData.es3");
+            Debug.Log(value);
+            
         }
     }
     public bool setShopStatus
