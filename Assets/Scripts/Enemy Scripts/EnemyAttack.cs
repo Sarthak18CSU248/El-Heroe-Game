@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public LayerMask playerLayer;
-    public float damge = 1f;
+    public int damge = 1;
     public float radius = 0.3f;
 
     private PlayerHealth playerHealth;

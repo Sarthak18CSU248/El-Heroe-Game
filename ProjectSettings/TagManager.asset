@@ -17,6 +17,8 @@ TagManager:
   - SwordBtn
   - Fx
   - Shop
+  - Wall
+  - healthBtn
   layers:
   - Default
   - TransparentFX

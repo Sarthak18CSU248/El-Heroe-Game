@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class ShopSystem : MonoBehaviour
 {
     public static ShopSystem instance;
+    public GameObject[] SwordChangeButton;
+    public GameObject[] HealthBuyButton;
     private bool enterShop;
-    private GameObject swordPanel,swordButton,scroller,done_crystal, done_flarecore,coinManager,buyCrystal,buyFlarecore;
+    private GameObject swordPanel,healthPanel,swordButton,healthButton,scroller,done_crystal, done_flarecore,coinManager,buyCrystal,buyFlarecore;
     private bool acceptBonus,buySword1,buySword2;
     [HideInInspector]public GameObject Shop;
 
@@ -29,10 +31,7 @@ public class ShopSystem : MonoBehaviour
             buySword2 = ES3.Load<bool>("buySword2", "Saved Files/GameData.es3");
         else
             ES3.Save<bool>("buySword2", false, "Saved Files/GameData.es3");
-            
-        Debug.Log(buySword1);
-        Debug.Log(buySword2);
-
+     
         instance = this;
         Shop = GameObject.Find("ShopPanel");
         swordPanel = GameObject.Find("SwordPanel");
@@ -43,10 +42,15 @@ public class ShopSystem : MonoBehaviour
         coinManager = GameObject.Find("Coin System");
         buyCrystal = GameObject.Find("BuyCrystal");
         buyFlarecore = GameObject.Find("BuyFlarecore");
+        healthPanel = GameObject.Find("HealthPanel");
+        healthButton = GameObject.Find("HealthButton");
+        //SwordChangeButton.
         Shop.SetActive(false);
         swordPanel.SetActive(false);
         swordButton.SetActive(false);
+        healthButton.SetActive(false);
         scroller.SetActive(false);
+        healthPanel.SetActive(false);
         done_crystal.SetActive(buySword1);
         done_flarecore.SetActive(buySword2);
         if (buySword1)
@@ -65,6 +69,13 @@ public class ShopSystem : MonoBehaviour
             return swordButton;
         }
     }
+    public GameObject healthBtn
+    {
+        get
+        {
+            return healthButton;
+        }
+    }
     public void ActivateShop()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -81,7 +92,9 @@ public class ShopSystem : MonoBehaviour
                     Shop.SetActive(true);
                     MouseLock.MouseLocked = false;
                     swordPanel.SetActive(false);
+                    healthPanel.SetActive(false);
                     swordButton.SetActive(true);
+                    healthButton.SetActive(true);
                     scroller.SetActive(false);
                 }
             }
@@ -89,20 +102,28 @@ public class ShopSystem : MonoBehaviour
         if (Shop.activeInHierarchy)
         {
             swordButton.GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
+            healthButton.GetComponent<Button>().onClick.AddListener(ActivateHealthPanel);
             if (swordPanel.activeInHierarchy)
             {
-                GameObject[] SwordChangeButton = GameObject.FindGameObjectsWithTag("SwordBtn");
                 foreach (GameObject btn in SwordChangeButton)
                 {
                     btn.GetComponent<Button>().onClick.AddListener(BuySword);
                 }
 
             }
+            if(healthPanel.activeInHierarchy)
+            {
+                foreach(GameObject btn in HealthBuyButton)
+                {
+                    btn.GetComponent<Button>().onClick.AddListener(BuyHealth);
+                }
+            }
 
         }
     }
     public void ActivateSwordPanel()
     {
+        healthPanel.SetActive(false);
         if (swordPanel.activeInHierarchy)
         {
             swordPanel.SetActive(false);
@@ -110,6 +131,17 @@ public class ShopSystem : MonoBehaviour
         }
         else
             swordPanel.SetActive(true);
+    }
+    public void ActivateHealthPanel()
+    {
+        swordPanel.SetActive(false);
+        if (healthPanel.activeInHierarchy)
+        {
+            healthPanel.SetActive(false);
+            scroller.SetActive(false);
+        }
+        else
+            healthPanel.SetActive(true);
     }
     private bool canShop()
     {
@@ -155,12 +187,13 @@ public class ShopSystem : MonoBehaviour
                     PlayerStatus.instance.ChangeSword(swordIndex);
                     StartCoroutine(CoinDecrease(6700));
                     buySword1 = true;
-                    ES3.Save<bool>("buySword1",buySword1,"Saved Files/GameData.es3");
+                    ES3.Save<bool>("buySword1", buySword1, "Saved Files/GameData.es3");
                     Debug.Log(ES3.Load<bool>("buySword1", "Saved Files/GameData.es3"));
                 }
             }
             else
                 PlayerStatus.instance.ChangeSword(swordIndex);
+            ES3.Save<int>("EnemyDamage", 40, "Saved Files/GameData.es3");
         }
         else if (swordIndex == 2)
         {
@@ -173,14 +206,33 @@ public class ShopSystem : MonoBehaviour
                     PlayerStatus.instance.ChangeSword(swordIndex);
                     StartCoroutine(CoinDecrease(15000));
                     buySword2 = true;
-                    ES3.Save<bool>("buySword2",buySword2,"Saved Files/GameData.es3");
+                    ES3.Save<bool>("buySword2", buySword2, "Saved Files/GameData.es3");
                 }
             }
             else
                 PlayerStatus.instance.ChangeSword(swordIndex);
+            ES3.Save<int>("EnemyDamage", 65, "Saved Files/GameData.es3");
         }
         else
+        {
             PlayerStatus.instance.ChangeSword(swordIndex);
+            ES3.Save<int>("EnemyDamage", 15, "Saved Files/GameData.es3");
+        }
+    }
+    public void BuyHealth()
+    {
+        Debug.Log("Into Method");
+        int buyAmount = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        Debug.Log(buyAmount);
+        int healthPercentile;
+        StartCoroutine(CoinDecrease(buyAmount));
+        if (buyAmount == 950)
+            healthPercentile = 10;
+        else if (buyAmount == 1600)
+            healthPercentile = 30;
+        else
+            healthPercentile = 50;
+        PlayerHealth.instance.BuyHealth(healthPercentile);
     }
     IEnumerator CoinDecrease(int coins_target)
     {

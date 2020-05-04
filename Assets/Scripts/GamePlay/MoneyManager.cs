@@ -15,11 +15,12 @@ public class MoneyManager : MonoBehaviour
     {
         if (ES3.KeyExists("AccountBalance","Saved Files/GameData.es3"))
         {
+            //ES3.Save<int>("AccountBalance", 20000,"Saved Files/GameData.es3");
             currentCoins = ES3.Load<int>("AccountBalance", "Saved Files/GameData.es3");
         }
         else
         {
-            ES3.Save<int>("AccountBalance", 0);
+            ES3.Save<int>("AccountBalance", 0,"Saved Files/GameData.es3");
         }
         Debug.Log(currentCoins);
         instance = this;
@@ -35,6 +36,7 @@ public class MoneyManager : MonoBehaviour
         set
         {
             currentCoins = value;
+            
         }
         
     }
