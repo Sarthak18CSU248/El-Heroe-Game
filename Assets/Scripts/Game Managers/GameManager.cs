@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] characters;
     [HideInInspector]
     public int SelectCharacterIndex;
-    public GameObject HealthOrb;
+    public GameObject HealthOrb,MoneyUI;
     public static bool Player_Instantiate=false;
     void Awake()
     {
@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         if(scene.name != "MainMenu") // spawn player
         {
             Instantiate(HealthOrb, Vector3.zero,Quaternion.identity);
+            if(scene.name!="Village")
+                Instantiate(MoneyUI, Vector3.zero, Quaternion.identity);
             Vector3 pos = GameObject.FindGameObjectWithTag("SpawnPosition").transform.position;
             Instantiate(characters[SelectCharacterIndex],pos,Quaternion.identity);
             Player_Instantiate = true;

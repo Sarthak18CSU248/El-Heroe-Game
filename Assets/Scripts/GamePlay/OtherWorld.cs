@@ -11,15 +11,25 @@ public class OtherWorld : MonoBehaviour
     private GameObject portal;
     public bool portalIsActive=false;
     private GameObject VillagePortal, BridgePortal;
+    private bool key1, key2;
+
     private void Start()
     {
         instance = this;
         VillagePortal = GameObject.Find("BridgePortal");
-        
-    }
-    private void Update()
-    {
-        
+        if (!ES3.KeyExists("Key1", "Saved Files/GameData.es3"))
+            ES3.Save<bool>("Key1", false, "Saved Files/GameData.es3");
+        else
+            key1 = ES3.Load<bool>("Key1", "Saved Files/GameData.es3");
+
+        if (!ES3.KeyExists("Key2", "Saved Files/GameData.es3"))
+            ES3.Save<bool>("Key2", false, "Saved Files/GameData.es3");
+        else
+            key2 = ES3.Load<bool>("Key2", "Saved Files/GameData.es3");
+
+
+        Debug.Log("Key1 " + key1);
+        Debug.Log("Key2 " + key2);
     }
     public void Portal(string name)
     {
@@ -35,15 +45,21 @@ public class OtherWorld : MonoBehaviour
         }
         else if (name == "OrcWorld")
         {
-            portal.transform.SetParent(GameObject.FindGameObjectWithTag("OrcWorld").transform);
-            portal.transform.position = new Vector3(67.08f, 11.55f, 128.53f);
-            StartCoroutine(LoadLevel(name));
+            if (key1)
+            {
+                portal.transform.SetParent(GameObject.FindGameObjectWithTag("OrcWorld").transform);
+                portal.transform.position = new Vector3(67.08f, 11.55f, 128.53f);
+                StartCoroutine(LoadLevel(name));
+            }
         }
         else
         {
-            portal.transform.SetParent(GameObject.FindGameObjectWithTag("SkyWorld").transform);
-            portal.transform.position = new Vector3(70.73f, 11.55f, 127.03f);
-            StartCoroutine(LoadLevel(name));
+            if (key2)
+            {
+                portal.transform.SetParent(GameObject.FindGameObjectWithTag("SkyWorld").transform);
+                portal.transform.position = new Vector3(70.73f, 11.55f, 127.03f);
+                StartCoroutine(LoadLevel(name));
+            }
         }
     }
     IEnumerator LoadLevel(string name)
@@ -66,7 +82,6 @@ public class OtherWorld : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("Portal"));
             LoadButton.SetActive(false);
             portalIsActive = false;
-            //Destroy(GameObject.FindGameObjectWithTag("Portal"));
         }
     }
 

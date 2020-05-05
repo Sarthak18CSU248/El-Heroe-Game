@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         instance = this;
-        ES3.DeleteKey("PlayerHealth", "Saved Files/GameData.es3");
+       ES3.DeleteKey("PlayerHealth", "Saved Files/GameData.es3");
 
         if (ES3.KeyExists("PlayerHealth", "Saved Files/GameData.es3"))
             health = ES3.Load<int>("PlayerHealth", "Saved Files/GameData.es3");
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
             ES3.Save<int>("PlayerHealth",health,"Saved Files/GameData.es3");
 
         player_health = GameObject.Find("HealthSlider").GetComponent<Slider>();
+        player_health.value = health * 0.01f;
     }
 
     public float getSetHealth
@@ -28,6 +30,11 @@ public class PlayerHealth : MonoBehaviour
         get
         {
             return health;
+        }
+        set
+        {
+            health = (int)value;
+            Invoke("BuyHealth",0f);
         }
     }
     public void TakeDamage(int damageAmount)
@@ -43,11 +50,11 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void BuyHealth(int healthPercentage)
+    public void BuyHealth()
     {
-
-        health += health * (healthPercentage / 100);
-        player_health.value += (health*(healthPercentage/100))/100;
+        player_health.value = health * 0.01f;
+        Debug.Log("Into Buy Health  "+health);
+        Debug.Log(player_health.value);
         ES3.Save<int>("PlayerHealth", health, "Saved Files/GameData.es3");
     }
 

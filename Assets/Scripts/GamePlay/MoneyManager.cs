@@ -15,7 +15,7 @@ public class MoneyManager : MonoBehaviour
     {
         if (ES3.KeyExists("AccountBalance","Saved Files/GameData.es3"))
         {
-            //ES3.Save<int>("AccountBalance", 20000,"Saved Files/GameData.es3");
+            ES3.Save<int>("AccountBalance", 5000,"Saved Files/GameData.es3");
             currentCoins = ES3.Load<int>("AccountBalance", "Saved Files/GameData.es3");
         }
         else
@@ -53,6 +53,10 @@ public class MoneyManager : MonoBehaviour
     {
         StartCoroutine(BonusCoin());
     }
+    public void RecieveKillBonus(int amount)
+    {
+        StartCoroutine(KillBonus(amount));
+    }
 
     IEnumerator BonusCoin()
     {
@@ -66,5 +70,17 @@ public class MoneyManager : MonoBehaviour
         }
         ES3.Save<int>("AccountBalance", currentCoins,"Saved Files/GameData.es3");
         ShopSystem.instance.setBonusStatus = true;
+    }
+
+    IEnumerator KillBonus(int amount)
+    {
+        int kill_bonus = amount + currentCoins;
+        while(currentCoins!=kill_bonus)
+        {
+            currentCoins += 10;
+            yield return new WaitForSeconds(0.00001f);
+            money.text = "$" + Convert.ToString(currentCoins);
+        }
+        ES3.Save<int>("AccountBalance", currentCoins, "Saved Files/GameData.es3");
     }
 }

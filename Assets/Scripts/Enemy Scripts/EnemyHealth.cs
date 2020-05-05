@@ -16,11 +16,17 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(deadFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
             if (gameObject.name == "SmallWOLF")
-                MoneyManager.instance.getCoins += 350;
+            {
+                MoneyManager.instance.RecieveKillBonus(350);
+            }
             else if (gameObject.name == "Small Orc lvl1")
-                MoneyManager.instance.getCoins += 510;
+            {
+                MoneyManager.instance.RecieveKillBonus(550);
+            }
             else
-                MoneyManager.instance.getCoins += 750;
+            {
+                MoneyManager.instance.RecieveKillBonus(750);
+            }
 
             Debug.Log(MoneyManager.instance.getCoins);
         }

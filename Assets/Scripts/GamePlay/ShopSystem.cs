@@ -12,7 +12,7 @@ public class ShopSystem : MonoBehaviour
     private bool enterShop;
     private GameObject swordPanel,healthPanel,swordButton,healthButton,scroller,done_crystal, done_flarecore,coinManager,buyCrystal,buyFlarecore;
     private bool acceptBonus,buySword1,buySword2;
-    [HideInInspector]public GameObject Shop;
+    [HideInInspector]public GameObject Shop; public GameObject[] CrystalImg; public GameObject[] FlarecoreImg;
 
     void Start()
     {
@@ -54,9 +54,26 @@ public class ShopSystem : MonoBehaviour
         done_crystal.SetActive(buySword1);
         done_flarecore.SetActive(buySword2);
         if (buySword1)
+        {
             Destroy(buyCrystal);
+            CrystalImg[0].SetActive(false);
+            CrystalImg[1].SetActive(true);
+        }
         if (buySword2)
+        {
             Destroy(buyFlarecore);
+            FlarecoreImg[0].SetActive(false);
+            FlarecoreImg[1].SetActive(true);
+        }
+
+        foreach (GameObject btn in HealthBuyButton)
+        {
+            btn.GetComponent<Button>().onClick.AddListener(BuyHealth);
+        }
+        foreach (GameObject btn in SwordChangeButton)
+        {
+            btn.GetComponent<Button>().onClick.AddListener(BuySword);
+        }
     }
     void Update()
     {
@@ -103,22 +120,7 @@ public class ShopSystem : MonoBehaviour
         {
             swordButton.GetComponent<Button>().onClick.AddListener(ActivateSwordPanel);
             healthButton.GetComponent<Button>().onClick.AddListener(ActivateHealthPanel);
-            if (swordPanel.activeInHierarchy)
-            {
-                foreach (GameObject btn in SwordChangeButton)
-                {
-                    btn.GetComponent<Button>().onClick.AddListener(BuySword);
-                }
-
-            }
-            if(healthPanel.activeInHierarchy)
-            {
-                foreach(GameObject btn in HealthBuyButton)
-                {
-                    btn.GetComponent<Button>().onClick.AddListener(BuyHealth);
-                }
-            }
-
+ 
         }
     }
     public void ActivateSwordPanel()
@@ -188,6 +190,8 @@ public class ShopSystem : MonoBehaviour
                     StartCoroutine(CoinDecrease(6700));
                     buySword1 = true;
                     ES3.Save<bool>("buySword1", buySword1, "Saved Files/GameData.es3");
+                    CrystalImg[0].SetActive(false);
+                    CrystalImg[1].SetActive(true);
                     Debug.Log(ES3.Load<bool>("buySword1", "Saved Files/GameData.es3"));
                 }
             }
@@ -205,6 +209,8 @@ public class ShopSystem : MonoBehaviour
                     done_flarecore.SetActive(true);
                     PlayerStatus.instance.ChangeSword(swordIndex);
                     StartCoroutine(CoinDecrease(15000));
+                    FlarecoreImg[0].SetActive(false);
+                    FlarecoreImg[1].SetActive(true);
                     buySword2 = true;
                     ES3.Save<bool>("buySword2", buySword2, "Saved Files/GameData.es3");
                 }
@@ -221,18 +227,32 @@ public class ShopSystem : MonoBehaviour
     }
     public void BuyHealth()
     {
+        int playerHealth = (int)PlayerHealth.instance.getSetHealth;
+        int i = 0;
         Debug.Log("Into Method");
+        Debug.Log(PlayerHealth.instance.getSetHealth);
         int buyAmount = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        Debug.Log(buyAmount);
-        int healthPercentile;
-        StartCoroutine(CoinDecrease(buyAmount));
-        if (buyAmount == 950)
-            healthPercentile = 10;
-        else if (buyAmount == 1600)
-            healthPercentile = 30;
-        else
-            healthPercentile = 50;
-        PlayerHealth.instance.BuyHealth(healthPercentile);
+        if(MoneyManager.instance.canShop(buyAmount))
+        {
+            switch(buyAmount)
+            {
+                case 1100:
+                    i = 10;
+                    break;
+
+                case 2700:
+                    i = 30;
+                    break;
+
+                case 4500:
+                    i = 50;
+                    break;
+            }
+
+            StartCoroutine(CoinDecrease(buyAmount));
+            playerHealth = playerHealth + ((playerHealth * i) / 100);
+            PlayerHealth.instance.getSetHealth = playerHealth;
+        }
     }
     IEnumerator CoinDecrease(int coins_target)
     {
@@ -240,7 +260,7 @@ public class ShopSystem : MonoBehaviour
         int balance = currBalance - coins_target;
         while (currBalance != balance)
         {
-            if (currBalance == balance)
+            if (currBalance == balance || currBalance<balance)
                 break;
             else
             {
