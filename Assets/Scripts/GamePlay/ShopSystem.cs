@@ -256,6 +256,7 @@ public class ShopSystem : MonoBehaviour
     }
     IEnumerator CoinDecrease(int coins_target)
     {
+        AudioManager.Instance.Play("Money");
         int currBalance = MoneyManager.instance.getCoins;
         int balance = currBalance - coins_target;
         while (currBalance != balance)
@@ -274,5 +275,6 @@ public class ShopSystem : MonoBehaviour
         }
 
         MoneyManager.instance.getCoins = balance;
+        AudioManager.Instance.Stop("Money");
     }
 }

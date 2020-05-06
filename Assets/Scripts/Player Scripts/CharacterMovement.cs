@@ -64,16 +64,21 @@ public class CharacterMovement : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire2"))
             {
-                Attack();
-                StartCoroutine(SpecialAttack());
+                if (EnergyBar.instance.SliderValue >= 0.5)
+                {
+                    Attack();
+                    StartCoroutine(SpecialAttack());
+                }
             }
         }
-
     }
 
     private Vector3 MoveDirection
     {
-        get { return direction; }
+        get
+        {
+            return direction;
+        }
         set
         {
             direction = value * speed_Move_Multiplier;
@@ -230,6 +235,7 @@ public class CharacterMovement : MonoBehaviour
     }
     IEnumerator SpecialAttack()
     {
+        EnergyBar.instance.SliderValue -= 0.35;
         yield return new WaitForSeconds(0.4f);
         Instantiate(fireTornado, transform.position + transform.forward * 2.5f, Quaternion.identity);
     }

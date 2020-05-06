@@ -64,6 +64,7 @@ public class MoneyManager : MonoBehaviour
 
     IEnumerator BonusCoin()
     {
+        AudioManager.Instance.Play("Money");
         int coins = 0;
         while (coins != bonus)
         {
@@ -74,10 +75,12 @@ public class MoneyManager : MonoBehaviour
         }
         ES3.Save<int>("AccountBalance", currentCoins,"Saved Files/GameData.es3");
         ShopSystem.instance.setBonusStatus = true;
+        AudioManager.Instance.Stop("Money");
     }
 
     IEnumerator KillBonus(int amount)
     {
+        AudioManager.Instance.Play("Money");
         int kill_bonus = amount + currentCoins;
         while(currentCoins!=kill_bonus)
         {
@@ -86,5 +89,6 @@ public class MoneyManager : MonoBehaviour
             money.text = "$" + Convert.ToString(currentCoins);
         }
         ES3.Save<int>("AccountBalance", currentCoins, "Saved Files/GameData.es3");
+        AudioManager.Instance.Stop("Money");
     }
 }

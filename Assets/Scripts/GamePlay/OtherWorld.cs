@@ -51,6 +51,7 @@ public class OtherWorld : MonoBehaviour
         {
             if (!level1 && MoneyManager.instance.canShop(7000))
             {
+                AudioManager.Instance.Play("Portal");
                 ES3.Save<int>("AccountBalance", MoneyManager.instance.getCoins - 7000, "Saved Files/GameData.es3");
                 MoneyManager.instance.UpdateTxtUI();
                 portal.transform.SetParent(GameObject.FindGameObjectWithTag("WolfWorld").transform);
@@ -58,7 +59,8 @@ public class OtherWorld : MonoBehaviour
                 StartCoroutine(LoadLevel(name));
             }
             else if (level1)
-            {
+            { 
+                AudioManager.Instance.Play("Portal");
                 portal.transform.SetParent(GameObject.FindGameObjectWithTag("WolfWorld").transform);
                 portal.transform.position = new Vector3(62.93052f, 11.55f, 129.6711f);
                 StartCoroutine(LoadLevel(name));
@@ -70,6 +72,7 @@ public class OtherWorld : MonoBehaviour
             {
                 if (!level2 && MoneyManager.instance.canShop(8800))
                 {
+                    AudioManager.Instance.Play("Portal");
                     ES3.Save<int>("AccountBalance", MoneyManager.instance.getCoins - 8800, "Saved Files/GameData.es3");
                     MoneyManager.instance.UpdateTxtUI();
                     portal.transform.SetParent(GameObject.FindGameObjectWithTag("OrcWorld").transform);
@@ -78,6 +81,7 @@ public class OtherWorld : MonoBehaviour
                 }
                 else if (level2)
                 {
+                    AudioManager.Instance.Play("Portal");
                     portal.transform.SetParent(GameObject.FindGameObjectWithTag("OrcWorld").transform);
                     portal.transform.position = new Vector3(67.08f, 11.55f, 128.53f);
                     StartCoroutine(LoadLevel(name));
@@ -88,6 +92,7 @@ public class OtherWorld : MonoBehaviour
         {
             if (key2 && MoneyManager.instance.canShop(10000))
             {
+                AudioManager.Instance.Play("Portal");
                 ES3.Save<int>("AccountBalance", MoneyManager.instance.getCoins - 10000, "Saved Files/GameData.es3");
                 MoneyManager.instance.UpdateTxtUI();
                 portal.transform.SetParent(GameObject.FindGameObjectWithTag("SkyWorld").transform);

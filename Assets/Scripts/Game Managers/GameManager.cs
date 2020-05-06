@@ -43,11 +43,32 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(HealthOrb, Vector3.zero,Quaternion.identity);
             if(scene.name!="Village")
-                Instantiate(MoneyUI, Vector3.zero, Quaternion.identity);
+            Instantiate(MoneyUI, Vector3.zero, Quaternion.identity);
             Vector3 pos = GameObject.FindGameObjectWithTag("SpawnPosition").transform.position;
             Instantiate(characters[SelectCharacterIndex],pos,Quaternion.identity);
+            Invoke("PlaySound", 1.6f);
             Player_Instantiate = true;
         }
+        if(scene.name=="Village")
+        {
+            AudioManager.Instance.Play("Village");
+        }
+        else if(scene.name =="WolfWorld")
+        {
+            AudioManager.Instance.Play("Wolf World");
+        }
+        else if (scene.name == "OrcWorld")
+        {
+            AudioManager.Instance.Play("Orc World");
+        }
+        else if (scene.name == "SkyWorld")
+        {
+            AudioManager.Instance.Play("Sky World");
+        }
+    }
+    private void PlaySound()
+    {
+        AudioManager.Instance.Play("Explosion");
     }
 
 

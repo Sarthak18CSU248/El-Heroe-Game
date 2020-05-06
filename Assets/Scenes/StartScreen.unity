@@ -4980,6 +4980,174 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &561227871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561227875}
+  - component: {fileID: 561227874}
+  - component: {fileID: 561227873}
+  - component: {fileID: 561227872}
+  m_Layer: 0
+  m_Name: Easy Save 3 Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &561227872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561227871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9107aee0ced90422da95f0b31680501f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 0bc909c5-b8bb-4e78-9cce-a795253d73f1
+  saveEvent: 1
+  loadEvent: 1
+  settings:
+    _location: 0
+    path: SaveData.es3
+    encryptionType: 0
+    encryptionPassword: password
+    directory: 0
+    format: 0
+    bufferSize: 2048
+    typeChecking: 1
+    safeReflection: 1
+    memberReferenceMode: 0
+    referenceMode: 2
+    assemblyNames:
+    - Assembly-CSharp
+    - Assembly-CSharp-firstpass
+    showAdvancedSettings: 0
+  autoSaves: []
+--- !u!114 &561227873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561227871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a83408fcc9044c4fbc7e5d09a369ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openReferences: 0
+  openPrefabs: 0
+  idRef:
+    _Keys: 136996b6caf7c7089eceecef57b0533bff8d72a04739cb0a1fdb93ef74013849090c6c55dd36844de59c86c061576e1255f2da37669629279e8cd5a58ab77d6295a2f8631da81937092486e4c08c6b386c819a812601e3613694b75060dec263e617d541a0f40a52275dbf75e3f21811229d120b51ff896b4168664ea095682a9edd015649d668617513577b3ea7bb438359d03c3449ed1a7196ffc771434d6f0a6aec3f0c91a508fa8b68c158f2d26652dc2d06995aa154efe6e5b3d7a0ef4861c786a894fa4f0db4c742a8e02cc27f3d678b6aeab82950c9974f25abf231599b1f221f787bfb4dd4c4ad2ee7078b3c2465ef3f2c5a32579e36712c4a75b93e96e90cc009a2064863d896250afb682f238c014603f12d411335425012d8685e0c6fc5d1134c467e5fa7a104f157625ece424fd676ff415bbccbd33fe5575a7690c7e664c969e3702d8019a4afd7af6998a083d08992e80cd2967121df7a9c07b4d48bd68f026b3727c0a9f5e69dab6c7b3dd786da2bff22aff29233f7c29058e2df0f24b426256acab45537170dda6f41dea5a2a3162d212c51797e6b61d117aefd283a5330df54e99344d92a37f45de8dc0ee6e2114a34b1edf863aca7fe68e33e8819e59f1b10fe518a365a074b64bb289ab79048063f55aba58e1a1dd242d284cb45c2c1ed2b5dc1b5b6d34a7360dee26d9eeda6ec35e77ea5f8785e62562b2223752bab54159ad1ebdbd3891569
+    _Values:
+    - {fileID: 746530583}
+    - {fileID: 746530585}
+    - {fileID: 746530584}
+    - {fileID: 746530586}
+    - {fileID: 1933929119}
+    - {fileID: 1933929121}
+    - {fileID: 1933929120}
+    - {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+    - {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    - {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+    - {fileID: 11500000, guid: ad798f1db45c246bfaa74957981258f0, type: 3}
+    - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+    - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 2061251129}
+    - {fileID: 1675357445}
+    - {fileID: 1381483}
+    - {fileID: 1381484}
+    - {fileID: 1068953268}
+    - {fileID: 1068953267}
+    - {fileID: 70913935}
+    - {fileID: 1617340158}
+    - {fileID: 1068953266}
+    - {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 70913936}
+    - {fileID: 1068953265}
+    - {fileID: 1617340155}
+    - {fileID: 70913938}
+    - {fileID: 1675357447}
+    - {fileID: 1675357446}
+    - {fileID: 2061251128}
+    - {fileID: 1720728293}
+    - {fileID: 2061251130}
+    - {fileID: 1617340157}
+    - {fileID: 1617340156}
+    - {fileID: 1720728292}
+    - {fileID: 70913939}
+    - {fileID: 70913937}
+    - {fileID: 2800000, guid: 963589f182d344dd8840e3a9c8718df0, type: 3}
+    - {fileID: 2800000, guid: 61189919155f2422d9f18b6784291011, type: 3}
+    - {fileID: 2800000, guid: fea92ebc30cb34aaa8794ff58367df47, type: 3}
+    - {fileID: 2800000, guid: 9e07dacc179654f7094dce8c3e153088, type: 3}
+    - {fileID: 2800000, guid: a918a3eeb77bc477fae303aefa6a781b, type: 3}
+    - {fileID: 21300000, guid: 9e07dacc179654f7094dce8c3e153088, type: 3}
+    - {fileID: 21300000, guid: 963589f182d344dd8840e3a9c8718df0, type: 3}
+    - {fileID: 21300000, guid: 61189919155f2422d9f18b6784291011, type: 3}
+    - {fileID: 21300000, guid: fea92ebc30cb34aaa8794ff58367df47, type: 3}
+    - {fileID: 21300000, guid: a918a3eeb77bc477fae303aefa6a781b, type: 3}
+    - {fileID: 2061251127}
+    - {fileID: 1381481}
+    - {fileID: 1675357444}
+    - {fileID: 1381482}
+    - {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+    - {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+    - {fileID: 1255026741}
+    - {fileID: 1255026740}
+    - {fileID: 1255026739}
+    - {fileID: 1255026738}
+    - {fileID: 11500000, guid: c63da1d7004924c83a502485d27def84, type: 3}
+    - {fileID: 8300000, guid: abca6ecf7cab647ac999240e5a3e651a, type: 3}
+    - {fileID: 8300000, guid: 14c0362cc8a3149e78be85d884ffe510, type: 3}
+    - {fileID: 8300000, guid: a0afa8880c91049bc9e8893796f685e8, type: 3}
+    - {fileID: 1626549929}
+    - {fileID: 1626549930}
+    - {fileID: 1626549928}
+  prefabs: []
+--- !u!114 &561227874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561227871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714d999c5ae749538494c1347e5a3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 'The Easy Save 3 Manager is required in any scenes which use Easy Save,
+    and is automatically added to your scene when you enter Play mode.
+
+
+    To stop
+    this from automatically being added to your scene, go to ''Window > Easy Save
+    3 > Settings'' and deselect the ''Auto Add Manager to Scene'' checkbox.'
+--- !u!4 &561227875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561227871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746530583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,6 +5478,146 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 451}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1626549928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626549930}
+  - component: {fileID: 1626549929}
+  - component: {fileID: 1626549931}
+  m_Layer: 0
+  m_Name: Background Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1626549929
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626549928}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 14c0362cc8a3149e78be85d884ffe510, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 3.12
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.325
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1626549930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626549928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626549931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626549928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d90dff69e3314715bfa28cfdafab279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675357444
 GameObject:
   m_ObjectHideFlags: 0

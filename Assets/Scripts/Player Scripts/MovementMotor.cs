@@ -45,6 +45,8 @@ public class MovementMotor : MonoBehaviour
         {
             fallVelocity -= 90f * gravityMultiplier * Time.deltaTime;
         }
+
+
     }
 
     public bool OnGroundCheck()

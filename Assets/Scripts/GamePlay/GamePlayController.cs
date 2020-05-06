@@ -13,6 +13,7 @@ public class GamePlayController : MonoBehaviour
     }
     public void LoadOtherWorld()
     {
+        AudioManager.Instance.Stop("Village");
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         OtherWorld.instance.Portal(name);
     }

@@ -2574,6 +2574,7 @@ MonoBehaviour:
   attack_Animations: []
   combo_AttackList: []
   combo_Type: 0
+  fireTornado: {fileID: 0}
   move_Magnitude: 0.05
   speed: 0.7
   speed_Move_WhileAttack: 0.1
@@ -2609,7 +2610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0c1ec878eed48d8813a17a62c5f4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  deadFX: {fileID: 0}
+  player_health: {fileID: 0}
 --- !u!1 &1455062123693394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,7 +3964,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  damage: 1
   radius: 1
 --- !u!1 &1665527693655584
 GameObject:

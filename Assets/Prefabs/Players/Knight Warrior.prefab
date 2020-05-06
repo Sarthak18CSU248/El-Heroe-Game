@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0c1ec878eed48d8813a17a62c5f4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   deadFX: {fileID: 186856, guid: e0fdab13dc4124682b7dbaaf7d287db9, type: 3}
+  player_health: {fileID: 0}
 --- !u!65 &187017038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5705,7 +5705,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  damage: 1
   radius: 2
 --- !u!1 &1497228319207364
 GameObject:
