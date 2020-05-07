@@ -5,7 +5,7 @@ using UnityEngine;
 public class damage : MonoBehaviour
 {
     public LayerMask enemyLayer;
-    public float enemy_damage = 20f;
+    public int enemy_damage = 20;
     public float radius = 2f;
 
     private EnemyHealth enemyHealth;

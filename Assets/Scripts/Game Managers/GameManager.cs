@@ -49,22 +49,6 @@ public class GameManager : MonoBehaviour
             Invoke("PlaySound", 1.6f);
             Player_Instantiate = true;
         }
-        if(scene.name=="Village")
-        {
-            AudioManager.Instance.Play("Village");
-        }
-        else if(scene.name =="WolfWorld")
-        {
-            AudioManager.Instance.Play("Wolf World");
-        }
-        else if (scene.name == "OrcWorld")
-        {
-            AudioManager.Instance.Play("Orc World");
-        }
-        else if (scene.name == "SkyWorld")
-        {
-            AudioManager.Instance.Play("Sky World");
-        }
     }
     private void PlaySound()
     {

@@ -177,7 +177,7 @@ public class ShopSystem : MonoBehaviour
     private void BuySword()
     {
         int swordIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        ES3.Save<int>("swordChoice", swordIndex, "Saved Files/GameData.es3");
+        ES3.Save<int>("SwordChoice",swordIndex,"Saved Files/GameData.es3");
         if (swordIndex == 1)
         {
             if (!buySword1)
@@ -197,7 +197,7 @@ public class ShopSystem : MonoBehaviour
             }
             else
                 PlayerStatus.instance.ChangeSword(swordIndex);
-            ES3.Save<int>("EnemyDamage", 40, "Saved Files/GameData.es3");
+           
         }
         else if (swordIndex == 2)
         {
@@ -217,12 +217,10 @@ public class ShopSystem : MonoBehaviour
             }
             else
                 PlayerStatus.instance.ChangeSword(swordIndex);
-            ES3.Save<int>("EnemyDamage", 65, "Saved Files/GameData.es3");
         }
         else
         {
             PlayerStatus.instance.ChangeSword(swordIndex);
-            ES3.Save<int>("EnemyDamage", 15, "Saved Files/GameData.es3");
         }
     }
     public void BuyHealth()

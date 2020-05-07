@@ -15,7 +15,6 @@ public class MoneyManager : MonoBehaviour
     {
         if (ES3.KeyExists("AccountBalance","Saved Files/GameData.es3"))
         {
-            //ES3.Save<int>("AccountBalance", 10000,"Saved Files/GameData.es3");
             currentCoins = ES3.Load<int>("AccountBalance", "Saved Files/GameData.es3");
         }
         else

@@ -5,25 +5,21 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public LayerMask enemyLayer;
-
-    private float damage;
     public float radius = 0.3f;
+    public int damage = 0;
 
     private EnemyHealth enemyHealth;
     private bool collided;
 
-    private void Start()
-    {
-        if (ES3.KeyExists("EnemyDamage", "Saved Files/GameData.es3"))
-            damage = ES3.Load<int>("EnemyDamage", "Saved Files/GameData.es3");
-        else
-            ES3.Save<int>("EnemyDamage", 15, "Saved Files/GameData.es3");
-    }
+    public static PlayerAttack Instance;
     // Update is called once per frame
     void Update()
     {
-        CheckForDamage();
-        
+        CheckForDamage(); 
+    }
+    public void DamageValue(int damage)
+    {
+        this.damage = damage;
     }
     void CheckForDamage()
     {

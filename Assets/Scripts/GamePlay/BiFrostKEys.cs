@@ -23,7 +23,10 @@ public class BiFrostKEys : MonoBehaviour
 
             }
             else
-                ES3.Save<bool>("Key3", true, "Saved Files/GameData.es3");
+            {
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "SkyWorld")
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Finish");
+            }
         }
     }
 

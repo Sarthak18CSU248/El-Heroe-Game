@@ -7,7 +7,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth instance;
-    private int health = 50;
+    private int health = 100;
     public GameObject deadFX;
     public Slider player_health;
 
@@ -48,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
             ES3.DeleteFile("Saved Files/GameData.es3");
             Instantiate(deadFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
     }
     public void BuyHealth()
